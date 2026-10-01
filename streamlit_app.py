@@ -1,10 +1,14 @@
-
+from pathlib import Path
 import streamlit as st
 import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
 import plotly.express as px
 import plotly.graph_objects as go
+
+
+BASE_DIR = Path(__file__).resolve().parent
+DB_PATH = BASE_DIR / "global_budget_db.db"
 
 
 st.set_page_config(
@@ -16,14 +20,7 @@ st.set_page_config(
 
 @st.cache_resource
 def get_engine():
-
-    
-
-    engine = create_engine(
-        "sqlite:///global_budget_db.db"
-    )
-
-    return engine
+    return create_engine(f"sqlite:///{DB_PATH}")
 
 engine = get_engine()
 
