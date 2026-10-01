@@ -76,12 +76,6 @@ logs/
 *.log
 
 # ============================================
-# Database
-# ============================================
-*.sqlite3
-*.db
-
-# ============================================
 # FastAPI / Flask / Django
 # ============================================
 instance/
@@ -203,6 +197,5 @@ coverage.xml
 venv
 
 individual_countries.zip
-
 Master_Global_Budgets_Historical.csv
 vdb.py
